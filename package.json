@@ -1,0 +1,35 @@
+{
+  "name": "@local/input",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Keyboard and mouse control for DeepSeek Harness: OS-level input injection, window focus, screen capture and self-test",
+  "license": "MIT",
+  "exports": {
+    ".": "./lib/index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "lib/helper/*.ps1",
+    "locale/*.json",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "meta": {
+    "title": "Keyboard & Mouse Control",
+    "description": "Windows keyboard and mouse control: move, click, drag, scroll, key chords, Unicode typing, window focus and screen capture, with a self-window typing guard, pause switch and audit log."
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:live": "node --test \"test/live.test.js\""
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

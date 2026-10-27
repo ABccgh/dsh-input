@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Keyboard and mouse control">
+  <rect width="64" height="64" rx="14" fill="#111827"/>
+  <g fill="#f9fafb">
+    <rect x="10" y="13" width="9" height="8" rx="2"/>
+    <rect x="22" y="13" width="9" height="8" rx="2"/>
+    <rect x="34" y="13" width="9" height="8" rx="2"/>
+    <rect x="10" y="25" width="21" height="8" rx="2"/>
+    <rect x="34" y="25" width="9" height="8" rx="2"/>
+  </g>
+  <rect x="38" y="35" width="16" height="21" rx="8" fill="none" stroke="#38bdf8" stroke-width="3"/>
+  <path d="M46 37.5v6" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <path d="M13 42h16" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+  <path d="M13 49h10" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+</svg>

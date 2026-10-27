@@ -1,0 +1,39 @@
+# dsh-input —— 键鼠控制插件
+#
+# 本文件既是 bundle 的 patch 层，也是这份插件的运行时配置。
+# 真正被读取的是**安装副本**里的这一份（%USERPROFILE%\dsh-bundles\input\cordis.patch.yml），
+# 不是仓库里的这份——改配置要改副本。
+#
+# 生效方式：仓库 → robocopy 到 %USERPROFILE%\dsh-bundles\input → plugin_manager(install_bundle)。
+# 只改本文件的配置值：插件页把 input 关开一次（或重载）即可；改 lib/ 代码必须重启 DSH。
+#
+# 安全相关字段（默认值偏保守）：
+#   guardSelfWindow —— 前台是本应用（DeepSeek Harness）时拒绝 input_key / input_type，
+#                      避免把按键打进自己的聊天框。确实要往本应用里打字时设为 false。
+#   pauseFile       —— 该文件存在时所有注入类工具立即拒绝。默认 %TEMP%\dsh-input-pause。
+#   dryRun          —— 只返回将要执行的动作，不真正注入。
+#   coordinateSpace —— physical（默认，物理像素）或 logical（按主屏缩放换算）。
+- insert:
+    - id: input
+      name: '@local/input'
+      config:
+        powershellPath: ''
+        helperPath: ''
+        requestTimeoutMs: 15000
+        startupTimeoutMs: 30000
+        idleTimeoutMs: 300000
+        guardSelfWindow: true
+        selfWindowTitles:
+          - DeepSeek Harness
+        pauseFile: ''
+        auditFile: ''
+        auditEnabled: true
+        dryRun: false
+        coordinateSpace: physical
+        allowOutOfBounds: false
+        maxTypedChars: 4000
+        maxKeyRepeat: 20
+        maxMoveSteps: 240
+        moveStepDelayMs: 8
+        screenshotDir: ''
+        maxScreenshots: 20
